@@ -1,0 +1,69 @@
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%
+String id = request.getParameter("userid");
+String driver = "com.mysql.jdbc.Driver";
+String connectionUrl = "jdbc:mysql://localhost:3306/";
+String database = "db1";
+String userid = "root";
+String password = "";
+String hi="no";
+
+Connection connection = null;
+Statement statement = null;
+ResultSet resultSet = null;
+%>
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Retrieve data from database in jsp</h1>
+<table border="1">
+<tr>
+<td>ID</td>
+<td>first name</td>
+<td>last name</td>
+<td>Address</td>
+<td><%= "Phone" %></td>
+
+</tr>
+<%
+ try{
+     Class.forName("com.mysql.jdbc.Driver");  
+connection = DriverManager.getConnection(connectionUrl+database, userid, password);
+statement=connection.createStatement();
+String sql ="select * from person";
+//hi="yes";
+resultSet = statement.executeQuery(sql);
+while(resultSet.next()){
+%>
+<tr>
+<td><%=resultSet.getInt("id") %></td>
+<td><%=resultSet.getString("fname") %></td>
+<td><%=resultSet.getString("lname") %></td>
+<td><%=resultSet.getString("address") %></td>
+<td><%=resultSet.getInt("phone") %></td>
+
+</tr>
+<%
+}
+connection.close();
+}catch(Exception ex) {
+            System.out.println(ex.toString());
+            hi = ex.toString();
+        }
+%>
+</table> 
+<%= "welcome to jsp "+hi  %>  
+</body>
+</html>
+
+<dependency>
+	<groupId>mysql</groupId>
+       	<artifactId>mysql-connector-java</artifactId>
+<version>8.0.27</version>
+
+protobuf-java-3.11.4.jar
+        </dependency>
