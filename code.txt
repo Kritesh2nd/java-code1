@@ -59,11 +59,3 @@ connection.close();
 <%= "welcome to jsp "+hi  %>  
 </body>
 </html>
-
-<dependency>
-	<groupId>mysql</groupId>
-       	<artifactId>mysql-connector-java</artifactId>
-<version>8.0.27</version>
-
-protobuf-java-3.11.4.jar
-        </dependency>
