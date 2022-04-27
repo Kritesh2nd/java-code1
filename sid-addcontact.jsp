@@ -59,6 +59,7 @@ String btn = request.getParameter("button");
                 if(addcontact!=null){
                   String sql ="insert into contact(name,email,number)values('"+cname+"','"+cemail+"',"+cnumber+");";
                   statement.executeUpdate(sql);
+                  out.print("<script>alert('New contact added sucessfully');</script>");
                 }
                 connection.close();
                 }
