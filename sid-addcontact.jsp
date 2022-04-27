@@ -44,6 +44,10 @@ String btn = request.getParameter("button");
                 <label for="exampleInputEmail1">Enter phone number</label>
                 <input type="number" class="form-control" placeholder="Enter phone number" name="cnumber">
               </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Enter message</label>
+                <input type="number" class="form-control" placeholder="Enter phone number" name="cmessage">
+              </div>
               <div class="text-center">
                 <button type="submit" class="btn btn-primary" name="addcontact">Add contact</button>
               </div>
@@ -52,12 +56,13 @@ String btn = request.getParameter("button");
                 String cemail = request.getParameter("cemail");
                 String cnumber = request.getParameter("cnumber");
                 String addcontact = request.getParameter("addcontact");
+                String cmessage = request.getParameter("cmessage");
                 try{
                 Class.forName("com.mysql.jdbc.Driver");  
                 connection = DriverManager.getConnection(connectionUrl+database, userid, password);
                 statement=connection.createStatement();
                 if(addcontact!=null){
-                  String sql ="insert into contact(name,email,number)values('"+cname+"','"+cemail+"',"+cnumber+");";
+                  String sql ="insert into contact(name,email,number,message)values('"+cname+"','"+cemail+"',"+cnumber+",'"+cmessage+"');";
                   statement.executeUpdate(sql);
                   out.print("<script>alert('New contact added sucessfully');</script>");
                 }
