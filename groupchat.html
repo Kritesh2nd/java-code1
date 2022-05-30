@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Group Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+      .mainbody{height:100vh;padding:20px;}
+
+      .inrmainbody{width:50%;padding:20px;}
+      .titlebox{font-size:30px;text-align: center;padding: 0 0 10px 0;}
+      .titleboxA,.titleboxB{width:50%;}
+
+      .onemsgbox{padding-bottom:15px;}
+      .dispmsgbox{height:500px;overflow:auto;}
+      .userprofilebox{width:10%;}
+      .inruserprofilebox{height:50px;width:50px;border-radius:50%;overflow: hidden;}
+      .usermsgbox{width:60%;}
+
+
+      .sendmsgform{padding:10px 0 0 0;}
+      .inpmsg{font-size:18px;padding:4px 8px;width:82%;border-radius:5px;}
+      .sendmsg{font-size:18px;padding:4px 8px;width:16%;border-radius:5px;cursor: pointer;}
+    </style>
+  </head>
+  <body>
+    <div class="mainbody bo flex jcc">
+      <div class="inrmainbody bor flex fdc">
+        <div class="titlebox bor flex">
+          <div class="titleboxA borp">
+            Group Chat
+          </div>
+          <div class="titleboxB borb flex">
+            <form action="" method="post" class="borr w100 flex aic jcfe">
+              <input type="submit" value="Log Out">
+            </form>
+          </div>
+        </div>  
+        <div class="dispmsgbox borg">
+          <div class="onemsgbox bor flex">
+            <div class="userprofilebox borr">
+              <div class="inruserprofilebox bor">
+                <img src="image/person.jpg" alt="" class="userprofile w100">
+              </div>
+              
+            </div>
+            <div class="usermsgbox borb">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro quaerat nemo saepe quis id. Fugiat, cumque repellat fuga nulla laudantium natus provident quia! Aliquam aperiam dignissimos magnam tenetur dolorum quidem.
+            </div>
+          </div>
+        </div>
+        <div class="sendmsgbox bo flex non">
+          <form action="" method="post" class="sendmsgform bo w100 flex jcsb">
+            <input type="text" class="inpmsg bor" value="" placeholder="type message...">
+            <input type="submit" class="sendmsg bor" value="Send">
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
