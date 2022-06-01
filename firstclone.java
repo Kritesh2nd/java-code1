@@ -43,7 +43,7 @@ public class firstclone extends HttpServlet {
                 sql ="select * from users;";
                 rs = stm.executeQuery(sql);
                 HttpSession session=request.getSession(false);  
-                session.setAttribute("uemail",inpuname);
+                session.setAttribute("uemail",inpusrname);
                 while(rs.next()){
 
                 }
