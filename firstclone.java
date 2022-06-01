@@ -1,6 +1,9 @@
 package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.*;  
+import javax.servlet.*;  
+import javax.servlet.http.*;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,6 +42,8 @@ public class firstclone extends HttpServlet {
                 stm=con.createStatement();
                 sql ="select * from users;";
                 rs = stm.executeQuery(sql);
+                HttpSession session=request.getSession(false);  
+                session.setAttribute("uemail",inpuname);
                 while(rs.next()){
 
                 }
