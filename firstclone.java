@@ -25,7 +25,7 @@ public class firstclone extends HttpServlet {
 //        from here
             String driver = "com.mysql.jdbc.Driver";
             String connectionUrl = "jdbc:mysql://localhost:3306/";
-            String database = "library";
+            String database = "blog";
             String userid = "root";
             String password = "";
             String sql="",sql1="",sql2="",sql3="";
@@ -40,7 +40,7 @@ public class firstclone extends HttpServlet {
                 Class.forName("com.mysql.jdbc.Driver");  
                 con = DriverManager.getConnection(connectionUrl+database, userid, password);
                 stm=con.createStatement();
-                sql ="select * from users;";
+                sql ="select * from userinfo;";
                 rs = stm.executeQuery(sql);
                 HttpSession session=request.getSession(false);  
                 session.setAttribute("uemail",inpusrname);
