@@ -22,7 +22,7 @@ try{
     Class.forName("com.mysql.jdbc.Driver");  
     con = DriverManager.getConnection(connectionUrl+database, userid, password);
     stm=con.createStatement();
-    sql ="select * from users;";
+    sql ="select * from userinfo;";
     rs = stm.executeQuery(sql);
     while(rs.next()){
     }
